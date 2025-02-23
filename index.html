@@ -68,10 +68,12 @@
     const audio = document.getElementById('audio'); // Audio element
 
     const lyrics = "Ko'zinga termilib utsa hayotim sen jonim deganding jonimni olding sunmas bahorni qalbimga solding";
-    
+
     heart.addEventListener('click', () => {
+        lyricDiv.innerHTML = ""; // Matnni tozalash
         lyricDiv.style.opacity = 1; // Asta ko'rinishi
         blackHeart.style.opacity = 1; // Qora yurakchani ko'rsatish
+        audio.currentTime = 0; // Ovozni boshidan o'ynash
         audio.play(); // Ovoz ijro etish
         typeLyrics(lyrics, 0); // Yozuvni boshlash
     });
