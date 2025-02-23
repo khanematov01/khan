@@ -10,16 +10,20 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: white;
             margin: 0;
             font-family: 'Brush Script MT', cursive;
             overflow: hidden;
+            background-image: url('https://avatars.mds.yandex.net/i?id=0af433a69311b1024c619e13b236958f-4498485-images-thumbs&n=13'); /* Rasm URL */
+            background-size: cover; /* Rasmni to'liq qoplash */
+            background-position: center; /* Rasmni markazda joylash */
         }
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column; /* Vertikal tartib */
+            padding: 20px; /* Ichki bo'shliq */
+            border-radius: 10px; /* Qirralarni yumshatish */
         }
         .hearts {
             display: flex;
@@ -27,7 +31,7 @@
         }
         #heart {
             font-size: 180px;
-            color: pink;
+            color: white; /* Yozuv rangini oq qilish */
             cursor: pointer;
             animation: shake 0.5s;
             margin-right: 20px; /* Yuraklar orasidagi masofa */
@@ -41,6 +45,7 @@
         }
         #lyric {
             font-size: 30px;
+            color: white; /* Yozuv rangini oq qilish */
             opacity: 0;
             transition: opacity 2s ease;
             text-align: center;
