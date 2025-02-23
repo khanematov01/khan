@@ -21,19 +21,23 @@
             justify-content: center;
             flex-direction: column; /* Vertikal tartib */
         }
+        .hearts {
+            display: flex;
+            align-items: center;
+        }
         #heart {
             font-size: 180px;
             color: pink;
             cursor: pointer;
             animation: shake 0.5s;
-            margin-right: 40px;
+            margin-right: 20px; /* Yuraklar orasidagi masofa */
         }
         #black-heart {
             font-size: 180px;
             color: black;
             opacity: 0;
             transition: opacity 1s ease;
-            margin-left: 40px;
+            margin-left: 20px; /* Yuraklar orasidagi masofa */
         }
         #lyric {
             font-size: 30px;
@@ -51,7 +55,7 @@
 <body>
 
 <div class="container">
-    <div>
+    <div class="hearts">
         <div id="heart">❤️</div>
         <div id="black-heart">🖤</div>
     </div>
@@ -68,7 +72,7 @@
     const audio = document.getElementById('audio'); // Audio element
 
     const lyrics = "Ko'zinga termilib utsa hayotim sen jonim deganding jonimni olding sunmas bahorni qalbimga solding";
-
+    
     heart.addEventListener('click', () => {
         lyricDiv.innerHTML = ""; // Matnni tozalash
         lyricDiv.style.opacity = 1; // Asta ko'rinishi
