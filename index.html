@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yurakchali Sayt</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            margin: 0;
+            font-family: 'Brush Script MT', cursive;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Vertikal tartib */
+        }
+        #heart {
+            font-size: 180px;
+            color: pink;
+            cursor: pointer;
+            animation: shake 0.5s;
+            margin-right: 40px;
+        }
+        #black-heart {
+            font-size: 180px;
+            color: black;
+            opacity: 0;
+            transition: opacity 1s ease;
+            margin-left: 40px;
+        }
+        #lyric {
+            font-size: 30px;
+            opacity: 0;
+            transition: opacity 2s ease;
+            text-align: center;
+            margin-top: 20px;
+            letter-spacing: 2px; /* Harflar o'rtasidagi masofa */
+        }
+        #audio {
+            display: none; /* Ovoz elementini dastlab ko'rsatmaymiz */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <div id="heart">❤️</div>
+        <div id="black-heart">🖤</div>
+    </div>
+    <div id="lyric"></div> <!-- Yoziladigan matn -->
+    
+    <!-- Audio tagi -->
+    <audio id="audio" src="music.mp3"></audio> <!-- Ovozli fayl manzilini qo'shing -->
+</div>
+
+<script>
+    const heart = document.getElementById('heart');
+    const lyricDiv = document.getElementById('lyric');
+    const blackHeart = document.getElementById('black-heart');
+    const audio = document.getElementById('audio'); // Audio element
+
+    const lyrics = "Ko'zinga termilib utsa hayotim sen jonim deganding jonimni olding sunmas bahorni qalbimga solding";
+    
+    heart.addEventListener('click', () => {
+        lyricDiv.style.opacity = 1; // Asta ko'rinishi
+        blackHeart.style.opacity = 1; // Qora yurakchani ko'rsatish
+        audio.play(); // Ovoz ijro etish
+        typeLyrics(lyrics, 0); // Yozuvni boshlash
+    });
+
+    function typeLyrics(text, index) {
+        if (index < text.length) {
+            lyricDiv.innerHTML += text.charAt(index); // Harf qo'shish
+            setTimeout(() => typeLyrics(text, index + 1), 100); // 100 ms kutish
+        }
+    }
+</script>
+
+</body>
+</html>
